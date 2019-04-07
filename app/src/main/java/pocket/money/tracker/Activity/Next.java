@@ -385,15 +385,21 @@ public class Next extends AppCompatActivity implements NavigationView.OnNavigati
 
 
 
-                        if(a!=0  && total_amount!=0)
-                        {
-                            cat_percentage.add((a/(total_amount/100)));
-                            Log.d("KEY_VALUE",cursor.getString(cursor.getColumnIndex(Category.Category))+"/"+a+"/"+(a/(total_amount/100))+"%");
+                        try{
+                            if(a!=0  && total_amount!=0)
+                            {
+                                cat_percentage.add((a/(total_amount/100)));
+                                Log.d("KEY_VALUE",cursor.getString(cursor.getColumnIndex(Category.Category))+"/"+a+"/"+(a/(total_amount/100))+"%");
+                            }
+                            else
+                            {
+                                cat_percentage.add( 0);
+                                Log.d("KEY_VALUE",cursor.getString(cursor.getColumnIndex(Category.Category))+"/"+a+"/"+0+"%");
+                            }
                         }
-                        else
+                        catch (Exception e)
                         {
-                            cat_percentage.add( 0);
-                            Log.d("KEY_VALUE",cursor.getString(cursor.getColumnIndex(Category.Category))+"/"+a+"/"+0+"%");
+
                         }
 
                 } while (cursor.moveToNext());
@@ -435,6 +441,12 @@ public class Next extends AppCompatActivity implements NavigationView.OnNavigati
         for(i=0;i<cat_percentage.size();i++){
             Log.d("Percentage",""+cat_percentage.get(i));
         }
-        Show_Graph();
+        try{
+            Show_Graph();
+        }
+        catch (Exception e)
+        {
+
+        }
     }
 }
