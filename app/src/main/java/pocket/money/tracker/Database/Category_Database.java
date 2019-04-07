@@ -13,6 +13,8 @@ public class Category_Database extends SQLiteOpenHelper {
     // Table columns
     public static final String ID = "ID";
     public static final String Category = "Category";
+    public static final String Amount = "Amount";
+    public static final String Date = "Date";
 
     // Database Information
     static final String DB_NAME = "Category.DB";
@@ -22,7 +24,7 @@ public class Category_Database extends SQLiteOpenHelper {
 
     // Creating table query
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + Category + " TEXT NOT NULL);";
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + Category + " TEXT NOT NULL, " + Amount + " Int NOT NULL, " + Date + " TEXT NOT NULL);";
 
     public Category_Database(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

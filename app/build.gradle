@@ -39,6 +39,7 @@ dependencies {
     /////Circle ImageView
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
-    ////Month peak
-    implementation 'com.github.lutvie72:RackMonthPicker:1.4'
+
+
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
 }

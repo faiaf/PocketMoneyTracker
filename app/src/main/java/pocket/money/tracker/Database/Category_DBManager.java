@@ -29,21 +29,26 @@ public class Category_DBManager {
         dbHelper.close();
     }
 
-    public void insert(String category) {
+    public void insert(String category,int amount,String date) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(Category_Database.Category, category);
+        contentValue.put(Category_Database.Amount, amount);
+        contentValue.put(Category_Database.Date, date);
         database.insert(Category_Database.TABLE_NAME, null, contentValue);
     }
 
+
     public Cursor fetch() {
-        String[] columns = new String[] { Category_Database.ID, Category_Database.Category };
+        String[] columns = new String[] { Category_Database.ID, Category_Database.Category, Category_Database.Category, Category_Database.Amount,Category_Database.Date };
         Cursor cursor = database.rawQuery("select * from "+Category_Database.TABLE_NAME,null);
         return cursor;
     }
 
-    public int update(long id,String month) {
+    public int update(long id,String month,int amount,String date) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Category_Database.Category, month);
+        contentValues.put(Category_Database.Amount, amount);
+        contentValues.put(Category_Database.Date, date);
 
 
         int i = database.update(Category_Database.TABLE_NAME, contentValues, Category_Database.ID + " = " + id, null);

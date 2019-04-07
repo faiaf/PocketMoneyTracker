@@ -36,7 +36,7 @@ public class Save {
 
         int thisDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-        date=thisMonth+" "+thisDay;
+        date=thisDay+"/"+(calendar.get(Calendar.MONTH)+1)+"/"+thisYear;
         return date;
     }
 

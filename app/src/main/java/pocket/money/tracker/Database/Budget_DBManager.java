@@ -29,22 +29,22 @@ public class Budget_DBManager {
         dbHelper.close();
     }
 
-    public void insert(String month ,int amount) {
+    public void insert(String date ,int amount) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(Budget_Database.Month, month);
+        contentValue.put(Budget_Database.Date, date);
         contentValue.put(Budget_Database.Amount, amount);
         database.insert(Budget_Database.TABLE_NAME, null, contentValue);
     }
 
     public Cursor fetch() {
-        String[] columns = new String[] { Budget_Database.ID, Budget_Database.Month ,Budget_Database.Amount };
+        String[] columns = new String[] { Budget_Database.ID, Budget_Database.Date ,Budget_Database.Amount };
         Cursor cursor = database.rawQuery("select * from "+Budget_Database.TABLE_NAME,null);
         return cursor;
     }
 
     public int update(long id,String month,int amount) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Budget_Database.Month, month);
+        contentValues.put(Budget_Database.Date, month);
         contentValues.put(Budget_Database.Amount, amount);
 
 

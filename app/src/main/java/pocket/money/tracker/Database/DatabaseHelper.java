@@ -14,7 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Table columns
     public static final String ID = "ID";
     public static final String Category = "Category";
-    public static final String Month = "Month";
+    public static final String Budget = "Budget";
     public static final String Date = "Date";
     public static final String Time = "Time";
     public static final String Amount = "Amount";
@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Creating table query
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + Category + " TEXT NOT NULL, " + Month + " TEXT NOT NULL," + Date + " TEXT NOT NULL," + Time + " TEXT NOT NULL," + Amount +" TEXT NOT NULL);";
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + Category + " TEXT NOT NULL, " + Budget + " TEXT NOT NULL," + Date + " TEXT NOT NULL," + Time + " TEXT NOT NULL," + Amount +" Int NOT NULL);";
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

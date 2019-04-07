@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import pocket.money.tracker.Class.Save;
+import pocket.money.tracker.Database.Budget_DBManager;
+import pocket.money.tracker.Database.Category_DBManager;
+import pocket.money.tracker.Database.Category_Manager;
 import pocket.money.tracker.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     static SharedPreferences.Editor editor;
 
     EditText name,email;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         pref = getApplicationContext().getSharedPreferences("Login", 0);
         // 0 - for private mode
         editor = pref.edit();
@@ -39,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
         {
             Collect();
         }
+
+
+
+
     }
 
     private void Collect() {
@@ -60,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Please fill all.", Toast.LENGTH_SHORT).show();
 
     }
+
 
 
 }

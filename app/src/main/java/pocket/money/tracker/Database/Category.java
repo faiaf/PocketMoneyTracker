@@ -5,27 +5,26 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class Budget_Database extends SQLiteOpenHelper {
+public class Category extends SQLiteOpenHelper {
 
     // Table Name
-    public static final String TABLE_NAME = "Month";
+    public static final String TABLE_NAME = "Category";
 
     // Table columns
     public static final String ID = "ID";
-    public static final String Date = "Date";
-    public static final String Amount = "Amount";
+    public static final String Category = "Category";
 
     // Database Information
-    static final String DB_NAME = "Budget.DB";
+    static final String DB_NAME = "Category.DB";
 
     // database version
     static final int DB_VERSION = 1;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + Date + " TEXT NOT NULL, " + Amount +" Int NOT NULL);";
+            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + Category + " TEXT NOT NULL);";
 
-    public Budget_Database(Context context) {
+    public Category(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 

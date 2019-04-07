@@ -29,10 +29,10 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(String category,String month, String date,String time,String amount) {
+    public void insert(String category,String budget, String date,String time,int amount) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.Category, category);
-        contentValue.put(DatabaseHelper.Month, month);
+        contentValue.put(DatabaseHelper.Budget, budget);
         contentValue.put(DatabaseHelper.Date, date);
         contentValue.put(DatabaseHelper.Time, time);
         contentValue.put(DatabaseHelper.Amount, amount);
@@ -40,15 +40,15 @@ public class DBManager {
     }
 
     public Cursor fetch() {
-        String[] columns = new String[] { DatabaseHelper.ID, DatabaseHelper.Category,DatabaseHelper.Month, DatabaseHelper.Date, DatabaseHelper.Time,DatabaseHelper.Amount };
+        String[] columns = new String[] { DatabaseHelper.ID, DatabaseHelper.Category,DatabaseHelper.Budget, DatabaseHelper.Date, DatabaseHelper.Time,DatabaseHelper.Amount };
         Cursor cursor = database.rawQuery("select * from "+DatabaseHelper.TABLE_NAME,null);
         return cursor;
     }
 
-    public int update(long id,String category,String month, String date,String time,String amount) {
+    public int update(long id,String category,String budget, String date,String time,String amount) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.Category, category);
-        contentValues.put(DatabaseHelper.Month, month);
+        contentValues.put(DatabaseHelper.Budget, budget);
         contentValues.put(DatabaseHelper.Date, date);
         contentValues.put(DatabaseHelper.Time, time);
         contentValues.put(DatabaseHelper.Amount, amount);
